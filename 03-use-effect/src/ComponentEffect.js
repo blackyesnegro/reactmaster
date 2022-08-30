@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
+import { AjaxComponent } from './AjaxComponent';
 import { AvisoComponent } from './AvisoComponent';
 
 export const ComponentEffect = () => {
@@ -35,6 +36,8 @@ export const ComponentEffect = () => {
                 Escribe lo que quieras: <input onChange={cambiarName} type='text'></input>
             </p>
             {name === 'JuanP' && <AvisoComponent />}
+            <hr />
+            <AjaxComponent />
 
         </div>
     )
