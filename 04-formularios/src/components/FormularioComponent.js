@@ -18,6 +18,8 @@ export const FormularioComponent = () => {
 
         setUsuario(usuario);
 
+        console.log(usuario);
+
     }
 
     return (
