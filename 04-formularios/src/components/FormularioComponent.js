@@ -14,35 +14,63 @@ export const FormularioComponent = () => {
             apellido: datos.apellido.value,
             genero: datos.genero.value,
             bio: datos.bio.value,
+            enviar: datos.enviar.value
         }
 
         setUsuario(usuario);
 
-        console.log(usuario);
 
     }
+
+    const cambiarDatos = e => {
+        let name_del_input = e.target.name ;
+        let usuario_para_modificar = usuario ;
+       
+                            
+         setUsuario ( estado_previo => ({
+                ...estado_previo,
+                [name_del_input]: e.target.value
+                })
+        );
+         console.log ( usuario );
+    };
+                                                    
 
     return (
         <div>
             <h1> Formularios con React</h1>
+            {usuario.enviar &&
+                (
+                    <div className='info_usuario label'>
+                        <p>Hola {usuario.genero}!, {usuario.nombre} {usuario.apellido}. </p>
+                        <p>{usuario.bio}</p>
+                    </div>
+                )
+            }
             <form onSubmit={conseguirDatosFormulario}>
                 <input 
                     type="text" 
                     placeholder= 'Nombre' 
                     name="nombre"
+                    onChange={cambiarDatos}
                 />
                 <input 
                     type="text" 
                     placeholder= 'Apellido' 
                     name="apellido"
+                    onChange={cambiarDatos}
+
                 />
-                <select name="genero">
+                <select name="genero" onChange={cambiarDatos}>
                     <option value= "hombre">Hombre</option >
                     <option value= "mujer"> Mujer</option>
                 </select>
-                <textarea placeholder='Biografia' name="bio"> </textarea>
-                <input type="submit" value="Enviar" />
+                <textarea placeholder='Biografia' name="bio" onChange={cambiarDatos}> </textarea>
+                <input type="submit" value="Enviar" name="enviar"/>
             </form>
+            
+            
+            
         </div>
     )
 }
