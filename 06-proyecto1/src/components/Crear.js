@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-import React from 'react'
-
-export const Crear = () => {
-  return (
-    <div>Crear</div>
-=======
 import React, { useState } from 'react'
 import { GuardarEnStorage } from '../helpers/GuardarEnStorage';
 
-export const Crear = () => {
+export const Crear = ({setListadoState}) => {
 
   const tituloComponente = "Añadir Película";
   const [peliState, setPeliState] = useState({
@@ -36,15 +29,21 @@ export const Crear = () => {
     //Guardar Estado
     setPeliState(peli);
 
+    //Actualiza el estado de ListadoState
+    setListadoState(elementos =>{
+      return [...elementos, peli];
+    });
+
     //Guardar en el Almacenamiento Local
     GuardarEnStorage('Pelis', peli);
+
   }
 
   
   return (
     <div className="add">
         <h3 className="title">{tituloComponente}</h3>
-        <strong>
+        <strong className='peli-ok'>
           {(titulo && descripcion) && "Has creado la pelicula:"} <br />{titulo}
         </strong>
 
@@ -64,6 +63,5 @@ export const Crear = () => {
               value="Guardar" />
         </form>
     </div>
->>>>>>> d0c66dff4f509987d023f147e320ba00139c7ceb
   )
 }

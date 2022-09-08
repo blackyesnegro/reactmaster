@@ -208,6 +208,10 @@ input[type="button"]{
   
 }
 
+.peli-ok{
+  color:green;
+}
+
 @media (max-width: 1085px){
   .content {
       flex-flow: column wrap;
