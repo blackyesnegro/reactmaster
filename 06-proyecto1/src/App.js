@@ -1,5 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import { Crear } from './components/Crear';
+import { Buscador } from './components/Buscador';
+import { Lista } from './components/Lista';
+
+
 
 function App() {
   return (
@@ -25,7 +30,7 @@ function App() {
 
         {/*Contenido principal*/}
         <section id="content" className="content">
-
+            <Lista />
             {/*aqui van las peliculas*/}
             <article className="peli-item">
                 <h3 className="title">Desarrollo web</h3>
@@ -69,6 +74,7 @@ function App() {
                     <input type="text" id="search_field" />
                     <button id="search">Buscar</button>
                 </form>
+                <Buscador />
             </div>
 
             <div className="add">
@@ -78,6 +84,8 @@ function App() {
                     <textarea id="description" placeholder="Descripción"></textarea>
                     <input type="submit" id="save" value="Guardar" />
                 </form>
+                <Crear />
+                
             </div>
         </aside>
 
