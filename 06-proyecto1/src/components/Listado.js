@@ -58,6 +58,8 @@ export const Listado = ({listadoState, setListadoState}) => {
                         <Editar 
                             peli={peli}
                             conseguirPeliculas={conseguirPeliculas}
+                            setEditar={setEditar}
+                            setListadoState={setListadoState}
                         />
                       </>
                     )}

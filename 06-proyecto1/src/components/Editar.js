@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Editar = ({peli,conseguirPeliculas}) => {
+export const Editar = ({peli,conseguirPeliculas,setEditar,setListadoState}) => {
 
     const guardarEdicion = (e, id) => {
         e.preventDefault();
@@ -11,8 +11,24 @@ export const Editar = ({peli,conseguirPeliculas}) => {
         //Buscar el indice del objeto a actualizar
         const pelis_almacenadas = conseguirPeliculas();
         const indice = pelis_almacenadas.findIndex(peli => peli.id === id);
-        console.log(indice)
-        //
+        
+        //Crear objeto con ese indice
+        let peli_actualizada = {
+            id,
+            titulo:target.titulo.value,
+            descripcion:target.descripcion.value
+        }
+
+        //ACtualizamos el elemento con ese indice
+        pelis_almacenadas[indice] = peli_actualizada;
+
+        //Actualizamos localStorage
+        localStorage.setItem('Pelis', JSON.stringify(pelis_almacenadas));
+        
+
+        //Actualizamos estados
+        setListadoState(pelis_almacenadas);
+        setEditar(0);
     }
 
   return (
