@@ -16,7 +16,7 @@ export const Persona = () => {
     let apellido = e.target.apellido.value;
     let url = `/persona/${nombre}/${apellido}`;
 
-    console.log(e.target.nombre.value);
+    
     if(nombre.lenght <= 0 && apellido.lenght <= 0){
       navegar('/inicio');
     }else if(nombre === 'contacto'){
