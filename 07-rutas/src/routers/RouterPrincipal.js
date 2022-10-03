@@ -15,7 +15,6 @@ import { Acerca } from '../components/panel/Acerca';
 export const RouterPrincipal = () => {
   return (
     <BrowserRouter>
-
       <nav>
         <ul>
           <li>
