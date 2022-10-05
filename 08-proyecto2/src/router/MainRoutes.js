@@ -15,14 +15,17 @@ export const MainRoutes = () => {
           <HeaderNav />
 
           {/* Main Content */}
-          <Routes>
-              <Route to="/" element={<Home />}/>
-              <Route to="/services" element={<Services />}/>
-              <Route to="/portfolio" element={<Portfolio />}/>
-              <Route to="/curricullum" element={<Curricullum />}/>
-              <Route to="/contact" element={<Contact />}/>
-          </Routes>
-          <hr />
+          <section className='content'>
+            <Routes>
+                <Route path="/" element={<Home />}/>
+                <Route path="/home" element={<Home />}/>
+                <Route path="/services" element={<Services />}/>
+                <Route path="/portfolio" element={<Portfolio />}/>
+                <Route path="/curricullum" element={<Curricullum />}/>
+                <Route path="/contact" element={<Contact />}/>
+            </Routes>
+          </section>
+          
           {/* Footer */}
           <Footer />
 
