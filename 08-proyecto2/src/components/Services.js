@@ -1,11 +1,22 @@
 import React from 'react'
-import { Curricullum } from './Curricullum'
 
 export const Services = () => {
   return (
-    <div>
-        <h1>Deceloping Services</h1>
-        
+    <div className='page'>
+        <section className='services'>
+          <article className='service'>
+            <h2>Diseño web</h2>
+            <p>Hago que tu web se vea bonita</p>
+          </article>        
+          <article className='service'>
+            <h2>Desarrollo web</h2>
+            <p>Creo tu página web desde cero</p>
+          </article>
+          <article className= 'service'>
+          <h2> Posicionamiento web</h2>
+          <p>Hago que tu web aparezca en Google y la vea la gente</p>
+          </article>
+        </section>        
     </div>
   )
 }
