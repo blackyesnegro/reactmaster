@@ -8,7 +8,7 @@ export const Gestion = () => {
 
   useEffect(() =>{
     console.log("La vista se ha actualizado");
-  })
+  },[])
 
   const gestorInput = useRef();
 
